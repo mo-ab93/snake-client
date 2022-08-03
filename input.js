@@ -12,8 +12,7 @@ const setupInput = function (conn) {
     if (key === '\u0003') {
       process.exit();
     }
-    if (key === 'w') {
-      
+    if (key === 'w') { 
       connection.write("Move: up")
     }
     if (key === 'a') {
@@ -25,7 +24,16 @@ const setupInput = function (conn) {
     if (key === 'd') {
       connection.write("Move: right")
     }
+    if (key === 'm'){
+      connection.write("Say: hey");
+
+    }
+    if (key === 'n'){
+      connection.write("Say: what's up");
+
+    }
   };
+ 
 
   stdin.on("data", handleUserInput);
   return stdin;
