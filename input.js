@@ -1,4 +1,4 @@
-
+const{MOVE_UP_KEY} = require('./constants')
 let connection;
 const setupInput = function (conn) {
   connection = conn;
@@ -12,26 +12,7 @@ const setupInput = function (conn) {
     if (key === '\u0003') {
       process.exit();
     }
-    if (key === 'w') { 
-      connection.write("Move: up")
-    }
-    if (key === 'a') {
-      connection.write("Move: left")
-    }
-    if (key === 's') {
-      connection.write("Move: down")
-    }
-    if (key === 'd') {
-      connection.write("Move: right")
-    }
-    if (key === 'm'){
-      connection.write("Say: hey");
-
-    }
-    if (key === 'n'){
-      connection.write("Say: what's up");
-
-    }
+    connection.write(MOVE_UP_KEY[key]);
   };
  
 
